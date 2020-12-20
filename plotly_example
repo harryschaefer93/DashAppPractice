@@ -17,10 +17,36 @@ app.layout = html.Div(
                    go.Scatter(
                        x=random_x,
                        y=random_y,
-                       mode = 'markers'
+                       mode = 'markers',
+                       marker = {
+                           'size':12,
+                           'color':'rgb(51,204,153)',
+                           'symbol':'pentagon',
+                           'line':{'width':2}
+
+                       }
                    )],
-               'layout':go.Layout(title='My Scatterplot')}
-               )])
+               'layout':go.Layout(title='My Scatterplot',
+                                  xaxis = {'title':'Some X Title'})}
+               ),
+     dcc.Graph(id='scatterplot2',
+               figure={'data': [
+                   go.Scatter(
+                       x=random_x,
+                       y=random_y,
+                       mode='markers',
+                       marker={
+                           'size': 12,
+                           'color': 'rgb(200,204,53)',
+                           'symbol': 'pentagon',
+                           'line': {'width': 2}
+
+                       }
+                   )],
+                   'layout': go.Layout(title='Second Plot',
+                                       xaxis={'title': 'Some X Title'})}
+               )
+     ])
 
 if __name__ == '__main__':
     app.run_server()
