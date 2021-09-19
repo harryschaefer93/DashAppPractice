@@ -43,7 +43,7 @@ def update_graph(selected_year):
 
     return {'data': traces, 'layout':go.Layout(title='My Plot',
                                       xaxis={'title': 'GDP per Capita','type':'log'},
-                                      yaxis={'title': 'Population Expectancy','type':'log'})}
+                                      yaxis={'title': 'Population Expectancy'})}
 
 
 
